@@ -28,9 +28,13 @@ void USAnimInstance::UpdateAnimationProperties(float DeltaTime)
 
 			if (OwnerCharacter->bIsSprinting) {
 				MovementSpeed = FMath::Clamp(UKismetMathLibrary::Abs(InputX_Anim) + UKismetMathLibrary::Abs(InputY_Anim), 0.f, 1.f) * 2.f;
+
+				Anim_PlayRate = 1.25f;
 			}
 			else {
 				MovementSpeed = FMath::Clamp(UKismetMathLibrary::Abs(InputX_Anim) + UKismetMathLibrary::Abs(InputY_Anim), 0.f, 1.f);
+
+				Anim_PlayRate = 1.f;
 			}
 
 			// Debug

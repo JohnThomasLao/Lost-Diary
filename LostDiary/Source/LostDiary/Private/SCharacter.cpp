@@ -111,6 +111,10 @@ void ASCharacter::MoveX(float Value)
 	}
 
 	if (Controller != NULL && Value != 0.f) {
+		if (bIsSprinting) {
+			Value *= 2;
+		}
+
 		// Determine the foward direction
 		FRotator NewYawRotation = FRotator(0.f, GetControlRotation().Yaw, 0.f);
 
@@ -132,6 +136,10 @@ void ASCharacter::MoveY(float Value)
 	}
 
 	if (Controller != NULL && Value != 0.f) {
+		if (bIsSprinting) {
+			Value *= 2;
+		}
+
 		// Determine the right direction
 		FRotator NewYawRotation = FRotator(0.f, GetControlRotation().Yaw, 0.f);
 

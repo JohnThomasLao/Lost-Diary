@@ -40,6 +40,10 @@ protected:
 	UPROPERTY(EditDefaultsOnly, BlueprintReadOnly)
 		bool bCrouching;
 
+	// Ref to play rate - to manipulate the play rate of animations
+	UPROPERTY(BlueprintReadWrite)
+		float Anim_PlayRate;
+
 	// Ref to owner character
 	UPROPERTY(BlueprintReadOnly)
 		ASCharacter* OwnerCharacter;
